@@ -1,0 +1,6 @@
+1::Mars Bar::74
+10
+2::Snickers::63
+8
+3::Bounty::110
+0
