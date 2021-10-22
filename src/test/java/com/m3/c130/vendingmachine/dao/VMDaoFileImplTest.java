@@ -20,15 +20,8 @@ class VMDaoFileImplTest {
 
     @org.junit.jupiter.api.Test
     void getItem() {
-        Item item1 = new Item();
-        item1.setId(1);
-        item1.setName("Snickers");
-        item1.setPrice(100);
-
-        Item item2 = new Item();
-        item2.setId(2);
-        item2.setName("Bounty");
-        item2.setPrice(200);
+        Item item1 = new Item(1, "Snickers", 100);
+        Item item2 = new Item(2, "Bounty", 200);
 
         testDao.addItem(item1, 1);
         testDao.addItem(item2, 4);
@@ -39,15 +32,8 @@ class VMDaoFileImplTest {
 
     @org.junit.jupiter.api.Test
     void getItemsList() {
-        Item item1 = new Item();
-        item1.setId(1);
-        item1.setName("Snickers");
-        item1.setPrice(100);
-
-        Item item2 = new Item();
-        item2.setId(2);
-        item2.setName("Bounty");
-        item2.setPrice(200);
+        Item item1 = new Item(1, "Snickers", 100);
+        Item item2 = new Item(2, "Bounty", 200);
 
         testDao.addItem(item1, 1);
         testDao.addItem(item2, 4);
@@ -60,15 +46,8 @@ class VMDaoFileImplTest {
 
     @org.junit.jupiter.api.Test
     void getCount() {
-        Item item1 = new Item();
-        item1.setId(1);
-        item1.setName("Snickers");
-        item1.setPrice(100);
-
-        Item item2 = new Item();
-        item2.setId(2);
-        item2.setName("Bounty");
-        item2.setPrice(200);
+        Item item1 = new Item(1, "Snickers", 100);
+        Item item2 = new Item(2, "Bounty", 200);
 
         testDao.addItem(item1, 1);
         testDao.addItem(item2, 4);
@@ -78,10 +57,7 @@ class VMDaoFileImplTest {
 
     @org.junit.jupiter.api.Test
     void buyItem() {
-        Item item1 = new Item();
-        item1.setId(1);
-        item1.setName("Snickers");
-        item1.setPrice(100);
+        Item item1 = new Item(1, "Snickers", 100);
 
         testDao.addItem(item1, 1);
 

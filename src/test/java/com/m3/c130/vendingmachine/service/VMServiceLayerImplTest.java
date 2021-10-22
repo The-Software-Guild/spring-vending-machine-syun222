@@ -22,10 +22,7 @@ class VMServiceLayerImplTest {
 
     @Test
     void normalBuyItem() {
-        Item onlyItem = new Item();
-        onlyItem.setId(1);
-        onlyItem.setName("Snickers");
-        onlyItem.setPrice(100);
+        Item onlyItem = new Item(1, "Snickers", 100);
 
         int fund = 200;
         Change change;
@@ -44,11 +41,7 @@ class VMServiceLayerImplTest {
 
     @Test
     void insufficientFundTest() {
-        Item onlyItem = new Item();
-        onlyItem.setId(1);
-        onlyItem.setName("Snickers");
-        onlyItem.setPrice(100);
-
+        Item onlyItem = new Item(1, "Snickers", 100);
         try {
             service.buyItem(onlyItem.getId(), 80);
             fail("Exception should have been thrown");

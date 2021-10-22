@@ -7,6 +7,16 @@ public class Item {
     private String name;
     private int price;
 
+    public Item() {
+
+    }
+
+    public Item(int id, String name, int price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }
