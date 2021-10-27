@@ -7,19 +7,15 @@ import com.m3.c130.vendingmachine.service.VMServiceLayerImpl;
 import com.m3.c130.vendingmachine.ui.UserIO;
 import com.m3.c130.vendingmachine.ui.UserIOConsoleImpl;
 import com.m3.c130.vendingmachine.ui.VMView;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App {
     public static void main(String[] args) {
-        UserIO io = new UserIOConsoleImpl();
-        try {
-            VMDao dao = new VMDaoFileImpl();
-            VMAuditDao audit = new VMAuditDaoFileImpl();
-            VMServiceLayer service = new VMServiceLayerImpl(dao, audit);
-            VMView view = new VMView(io, service);
-            VMController controller = new VMController(view, service);
-            controller.run();
-        } catch (PersistenceException e) {
-            System.out.println(e.getMessage());
-        }
+        AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext();
+        appContext.scan("com.m3.c130.vendingmachine");
+        appContext.refresh();
+
+        VMController controller = appContext.getBean("vmcontroller", VMController.class);
+        controller.run();
     }
 }

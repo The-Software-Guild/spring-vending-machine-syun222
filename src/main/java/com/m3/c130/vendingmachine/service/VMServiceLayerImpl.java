@@ -5,13 +5,17 @@ import com.m3.c130.vendingmachine.dao.PersistenceException;
 import com.m3.c130.vendingmachine.dao.VMAuditDao;
 import com.m3.c130.vendingmachine.dao.VMDao;
 import com.m3.c130.vendingmachine.dto.Item;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class VMServiceLayerImpl implements VMServiceLayer {
     private VMDao dao;
     private VMAuditDao audit;
 
+    @Autowired
     public VMServiceLayerImpl(VMDao dao, VMAuditDao audit) {
         this.audit = audit;
         this.dao = dao;

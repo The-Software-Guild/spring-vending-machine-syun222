@@ -4,16 +4,20 @@ import com.m3.c130.vendingmachine.dto.Item;
 import com.m3.c130.vendingmachine.service.Change;
 import com.m3.c130.vendingmachine.service.Coin;
 import com.m3.c130.vendingmachine.service.VMServiceLayer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class VMView {
     private UserIO io;
     VMServiceLayer service;
 
+    @Autowired
     public VMView(UserIO io, VMServiceLayer service) {
         this.io = io;
         this.service = service;

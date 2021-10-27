@@ -1,8 +1,11 @@
 package com.m3.c130.vendingmachine.ui;
 
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+@Component
 public class UserIOConsoleImpl implements UserIO {
     private Scanner sc = new Scanner(System.in);
 

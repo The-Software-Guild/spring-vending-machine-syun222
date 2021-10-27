@@ -8,12 +8,16 @@ import com.m3.c130.vendingmachine.service.VMServiceLayer;
 import com.m3.c130.vendingmachine.ui.UserIO;
 import com.m3.c130.vendingmachine.ui.UserIOConsoleImpl;
 import com.m3.c130.vendingmachine.ui.VMView;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("vmcontroller")
 public class VMController {
     private VMView view;
     private UserIO io = new UserIOConsoleImpl();
     private VMServiceLayer service;
 
+    @Autowired
     public VMController(VMView view, VMServiceLayer service) {
         this.view = view;
         this.service = service;

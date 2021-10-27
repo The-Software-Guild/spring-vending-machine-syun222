@@ -1,10 +1,12 @@
 package com.m3.c130.vendingmachine.dao;
 
 import com.m3.c130.vendingmachine.dto.Item;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.*;
 
+@Component
 public class VMDaoFileImpl implements VMDao {
     private final String VM_FILE;
     private static final String DELIMITER = "::";
